@@ -11,13 +11,13 @@ EOF
 
 # 클러스터 노드 개수
 NODE_COUNT=6
-BASE_PORT=6000
-BUS_PORT_BASE=16000
+BASE_PORT=${BASE_PORT:-7000}
+BASE_BUSPORT=${BASE_BUSPORT:-17000}
 
 # 여러 개의 valkey-server 백그라운드 실행
 for i in $(seq 0 $(($NODE_COUNT - 1))); do
   port=$(($BASE_PORT + $i))
-  bus_port=$(($BUS_PORT_BASE + $i))
+  bus_port=$(($BASE_BUSPORT + $i))
   data_dir="/data/node-$i"
   mkdir -p $data_dir
 
