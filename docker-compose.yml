@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  valkey-cluster:
+    build: .
+    container_name: valkey-cluster
+    environment:
+      - VALKEY_USER=user
+      - VALKEY_PASS=pass
+    ports:
+      - "6000:6000"
+      - "6001:6001"
+      - "6002:6002"
+      - "6003:6003"
+      - "6004:6004"
+      - "6005:6005"
+      - "16000:16000"
+      - "16001:16001"
+      - "16002:16002"
+      - "16003:16003"
+      - "16004:16004"
+      - "16005:16005"
